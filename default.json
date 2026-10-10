@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Shared Renovate preset for NotCybot repositories",
+  "extends": [
+    "config:recommended",
+    "helpers:pinGitHubActionDigests",
+    ":configMigration",
+    ":semanticCommits",
+    ":automergeMinor"
+  ],
+  "timezone": "Europe/Berlin",
+  "schedule": ["* 0-11 * * 1"],
+  "osvVulnerabilityAlerts": true,
+  "digest": {
+    "automerge": true
+  },
+  "pinDigest": {
+    "automerge": true
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+    "schedule": ["* 0-11 * * 1"]
+  },
+  "nix": {
+    "enabled": true
+  }
+}
