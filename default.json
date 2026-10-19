@@ -9,7 +9,8 @@
     ":automergeMinor"
   ],
   "timezone": "Europe/Berlin",
-  "schedule": ["* 0-11 * * 1"],
+  "prHourlyLimit": 0,
+  "schedule": ["* * * * 1"],
   "osvVulnerabilityAlerts": true,
   "digest": {
     "automerge": true
@@ -20,7 +21,7 @@
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
-    "schedule": ["* 0-11 * * 1"]
+    "schedule": ["* * * * 1"]
   },
   "nix": {
     "enabled": true
