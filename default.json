@@ -6,11 +6,12 @@
     "helpers:pinGitHubActionDigests",
     ":configMigration",
     ":semanticCommits",
-    ":automergeMinor"
+    ":automergeMinor",
+    "group:allNonMajor"
   ],
   "timezone": "Europe/Berlin",
   "prHourlyLimit": 0,
-  "schedule": ["* * * * 1"],
+  "schedule": ["* 0-12 1 * *"],
   "osvVulnerabilityAlerts": true,
   "digest": {
     "automerge": true
@@ -21,9 +22,17 @@
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
-    "schedule": ["* * * * 1"]
+    "schedule": ["* 0-12 * * 1"]
   },
   "nix": {
     "enabled": true
-  }
+  },
+  "packageRules": [
+    {
+      "description": "Majors in one PR too, never automerged",
+      "matchUpdateTypes": ["major"],
+      "groupName": "all major dependencies",
+      "groupSlug": "all-major"
+    }
+  ]
 }
