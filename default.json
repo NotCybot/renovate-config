@@ -32,13 +32,5 @@
   },
   "nix": {
     "enabled": true
-  },
-  "packageRules": [
-    {
-      "description": "Majors in one PR too, never automerged",
-      "matchUpdateTypes": ["major"],
-      "groupName": "all major dependencies",
-      "groupSlug": "all-major"
-    }
-  ]
+  }
 }
